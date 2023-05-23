@@ -1,6 +1,6 @@
 ﻿using Sales.Application.App_Interfaces.Repository;
 
-namespace Sales.Persistence.UnitOfWork
+namespace Sales.Persistence.Persist_UnitOfWork
 {
     public interface IUnitOfWork
     {
