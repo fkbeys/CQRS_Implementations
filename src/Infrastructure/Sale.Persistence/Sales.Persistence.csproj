@@ -21,8 +21,4 @@
     <ProjectReference Include="..\..\Core\Sales.Domain\Sales.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Meds\Commands\" />
-  </ItemGroup>
-
 </Project>

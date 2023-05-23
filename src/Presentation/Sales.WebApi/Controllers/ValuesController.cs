@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Sales.Persistence.Persist_UnitOfWork;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Sales.Persistence.Meds.Commands;
+using Sales.Persistence.Meds.Queries;
 
 namespace Sales.WebApi.Controllers
 {
@@ -7,33 +9,40 @@ namespace Sales.WebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IMediator mediator;
 
-        public ValuesController(IUnitOfWork unitOfWork)
+        public ValuesController(IMediator mediator)
         {
-            this.unitOfWork = unitOfWork;
+            this.mediator = mediator;
         }
 
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var request = new GetProductQueryById() { id = id };
+            var result = await mediator.Send(request);
+            return Ok(result);
+        }
 
 
         [HttpGet]
         public async Task<IActionResult> GetAllData()
         {
-            var data = await unitOfWork.productRepository.GetAll();
-
-            return Ok(data);
+            var request = new GetAllProductQuery();
+            var result = await mediator.Send(request);
+            return Ok(result);
         }
-
-
 
         [HttpPost]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(ProductCreateCommand command)
         {
-            var data = await unitOfWork.productRepository.GetAll();
-
-            return Ok(data);
+            var result = await mediator.Send(command);
+            return Ok(result);
         }
+
+
+
 
 
 

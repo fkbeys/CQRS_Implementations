@@ -1,4 +1,4 @@
-﻿namespace Sales.Application.App_Wrappers
+﻿namespace Sales.Application.App_Wrappers.Responses
 {
     public class PagedResponse<T> : ServiceResponse<T>
     {

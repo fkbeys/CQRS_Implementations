@@ -1,6 +1,6 @@
-﻿namespace Sales.Application.App_Wrappers
+﻿namespace Sales.Application.App_Wrappers.Responses
 {
-    public class ServiceResponse<T>
+    public class ServiceResponse<T> : BaseResponse
     {
         public T? Value { get; set; }
 
