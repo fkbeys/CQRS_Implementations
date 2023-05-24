@@ -2,11 +2,11 @@
 {
     public class ServiceResponse<T> : BaseResponse
     {
-        public T? Value { get; set; }
+        public T? data { get; set; }
 
-        public ServiceResponse(T? value)
+        public ServiceResponse(T? data)
         {
-            Value = value;
+            this.data = data;
         }
     }
 }

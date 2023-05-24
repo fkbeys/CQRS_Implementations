@@ -25,7 +25,7 @@ namespace Sales.Persistence.Meds.Handlers.ProductHandlers
             try
             {
                 var data = await unitOfWork.productRepository.GetByIdAsync(request.id);
-                result.Value = mapper.Map<ProductDto>(data);
+                result.data = mapper.Map<ProductDto>(data);
 
                 result.isSuccess = true;
                 result.message = "Product record found successfully.";

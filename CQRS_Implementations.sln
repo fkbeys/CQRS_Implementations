@@ -7,17 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{87A72ADE-6EF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FA90D29E-884E-48A8-8021-C5E4E7BE018A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Domain", "src\Core\Sales.Domain\Sales.Domain.csproj", "{BEA1CBC9-E150-40C8-B95A-965DD6CE3DD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.Domain", "src\Core\Sales.Domain\Sales.Domain.csproj", "{BEA1CBC9-E150-40C8-B95A-965DD6CE3DD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Application", "src\Core\Sales.Application\Sales.Application.csproj", "{6CC04A70-350F-4301-B1DA-5905998E2C14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.Application", "src\Core\Sales.Application\Sales.Application.csproj", "{6CC04A70-350F-4301-B1DA-5905998E2C14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{52BC7335-EF78-4CB9-824F-890D6C5C9ED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Persistence", "src\Infrastructure\Sale.Persistence\Sales.Persistence.csproj", "{F7E9D51F-4398-476F-9896-7AF3A3C48F42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.Persistence", "src\Infrastructure\Sale.Persistence\Sales.Persistence.csproj", "{F7E9D51F-4398-476F-9896-7AF3A3C48F42}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{254CA8E4-6DB2-4145-9485-C74E38B23C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.WebApi", "src\Presentation\Sales.WebApi\Sales.WebApi.csproj", "{C448A6EF-4719-4641-B223-4851C37A5E43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales.WebApi", "src\Presentation\Sales.WebApi\Sales.WebApi.csproj", "{C448A6EF-4719-4641-B223-4851C37A5E43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -26,8 +26,7 @@ namespace Sales.Persistence.Meds.Handlers.ProductHandlers
             try
             {
                 var data = await unitOfWork.productRepository.GetAllAsync();
-
-                result.Value = mapper.Map<List<ProductDto>>(data);
+                result.data = mapper.Map<List<ProductDto>>(data);
 
                 result.isSuccess = true;
                 result.message = "Product data listed successfully.";

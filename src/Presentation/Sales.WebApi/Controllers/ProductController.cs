@@ -5,9 +5,7 @@ using Sales.Persistence.Meds.Queries.ProductQueries;
 
 namespace Sales.WebApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductController : CustomBaseController
     {
         private readonly IMediator mediator;
 
@@ -22,29 +20,23 @@ namespace Sales.WebApi.Controllers
         {
             var request = new GetProductQueryById() { id = id };
             var result = await mediator.Send(request);
-            return Ok(result);
+            return ResponseResolver(result);
         }
 
 
         [HttpGet]
         public async Task<IActionResult> GetAllData()
-        {
+        { 
             var request = new GetAllProductQuery();
             var result = await mediator.Send(request);
-            return Ok(result);
+            return ResponseResolver(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(ProductCreateCommand command)
         {
             var result = await mediator.Send(command);
-            return Ok(result);
+            return ResponseResolver(result);             
         }
-
-
-
-
-
-
     }
 }

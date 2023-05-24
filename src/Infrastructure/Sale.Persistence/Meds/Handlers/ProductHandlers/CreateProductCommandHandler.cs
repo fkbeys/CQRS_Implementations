@@ -40,7 +40,7 @@ namespace Sales.Persistence.Meds.Handlers.ProductHandlers
 
                 await unitOfWork.productRepository.AddAsync(obj);
                 await unitOfWork.SaveChangesAsync();
-                result.Value = obj.id;
+                result.data = obj.id;
                 result.isSuccess = true;
                 result.message = "Product created successfully.";
             }
