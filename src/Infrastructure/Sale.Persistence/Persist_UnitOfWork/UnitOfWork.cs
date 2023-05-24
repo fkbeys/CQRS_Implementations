@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Sales.Application.App_Interfaces.Repository;
+﻿using Sales.Application.App_Interfaces.Repository;
 using Sales.Persistence.Persist_DbContext;
 using Sales.Persistence.Persist_Repositories;
 

@@ -10,7 +10,7 @@ namespace Sales.Persistence
     {
         public static void AddPersistenceServiceRegistration(this IServiceCollection servColl)
         {
-            servColl.AddAutoMapper(typeof(CustomMappingProfiles));
+            servColl.AddAutoMapper(typeof(MappingProfiles));
 
             servColl.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ServiceRegistration).Assembly));
 

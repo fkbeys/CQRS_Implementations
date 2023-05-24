@@ -1,17 +1,17 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Sales.Persistence.Meds.Commands;
-using Sales.Persistence.Meds.Queries;
+using Sales.Persistence.Meds.Commands.ProductCommands;
+using Sales.Persistence.Meds.Queries.ProductQueries;
 
 namespace Sales.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ProductController : ControllerBase
     {
         private readonly IMediator mediator;
 
-        public ValuesController(IMediator mediator)
+        public ProductController(IMediator mediator)
         {
             this.mediator = mediator;
         }

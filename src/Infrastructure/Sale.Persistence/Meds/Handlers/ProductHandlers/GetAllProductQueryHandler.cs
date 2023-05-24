@@ -2,11 +2,11 @@
 using MediatR;
 using Sales.Application.App_Dto;
 using Sales.Application.App_Exceptions;
-using Sales.Application.App_Wrappers.Responses;
-using Sales.Persistence.Meds.Queries;
+using Sales.Application.App_Wrappers.ResponseWrappers;
+using Sales.Persistence.Meds.Queries.ProductQueries;
 using Sales.Persistence.Persist_UnitOfWork;
 
-namespace Sales.Persistence.Meds.Handlers
+namespace Sales.Persistence.Meds.Handlers.ProductHandlers
 {
     public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQuery, ServiceResponse<List<ProductDto>>>
     {

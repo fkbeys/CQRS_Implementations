@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Sales.Application.App_Wrappers.Responses;
+using Sales.Application.App_Wrappers.ResponseWrappers;
 
-namespace Sales.Persistence.Meds.Commands
+namespace Sales.Persistence.Meds.Commands.ProductCommands
 {
     public class ProductCreateCommand : IRequest<ServiceResponse<Guid>>
     {

@@ -1,4 +1,4 @@
-﻿using Sales.Application.App_Wrappers.Responses;
+﻿using Sales.Application.App_Wrappers.ResponseWrappers;
 
 namespace Sales.Application.App_Exceptions
 {

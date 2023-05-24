@@ -1,4 +1,4 @@
-﻿namespace Sales.Application.App_Wrappers.Responses
+﻿namespace Sales.Application.App_Wrappers.ResponseWrappers
 {
     public class ServiceResponse<T> : BaseResponse
     {

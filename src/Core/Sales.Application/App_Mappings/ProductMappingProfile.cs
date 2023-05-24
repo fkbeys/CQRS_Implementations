@@ -4,12 +4,11 @@ using Sales.Domain.Domain_Entities;
 
 namespace Sales.Application.App_Mappings
 {
-    public class CustomMappingProfiles : Profile
+    public class ProductMappingProfile : Profile
     {
-        public CustomMappingProfiles()
+        public ProductMappingProfile()
         {
             CreateMap<Product, ProductDto>();
         }
-
     }
 }

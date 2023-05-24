@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Sales.Application.App_Exceptions;
-using Sales.Application.App_Wrappers.Responses;
+using Sales.Application.App_Wrappers.ResponseWrappers;
 using Sales.Domain.Domain_Entities;
-using Sales.Persistence.Meds.Commands;
+using Sales.Persistence.Meds.Commands.ProductCommands;
 using Sales.Persistence.Persist_UnitOfWork;
 
-namespace Sales.Persistence.Meds.Handlers
+namespace Sales.Persistence.Meds.Handlers.ProductHandlers
 {
     public class CreateProductCommandHandler : IRequestHandler<ProductCreateCommand, ServiceResponse<Guid>>
     {
