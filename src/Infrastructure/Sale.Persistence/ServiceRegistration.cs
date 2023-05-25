@@ -17,6 +17,8 @@ namespace Sales.Persistence
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ServiceRegistration).Assembly));
 
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
             services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseNpgsql(conn);

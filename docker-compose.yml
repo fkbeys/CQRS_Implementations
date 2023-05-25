@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  sales.webapi:
+    image: ${DOCKER_REGISTRY-}saleswebapi
+    build:
+      context: .
+      dockerfile: src/Presentation/Sales.WebApi/Dockerfile
+    ports:
+      - 8000:80
+    restart: always
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=postgres;Database=salesdb;User Id=postgres;Password=postgres;
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: salesdb
+      POSTGRES_USER: postgres
+
+volumes:
+  pgdata:
