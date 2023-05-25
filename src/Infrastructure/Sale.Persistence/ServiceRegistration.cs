@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Sales.Application.App_Mappings;
 using Sales.Persistence.Persist_DbContext;
@@ -8,21 +9,22 @@ namespace Sales.Persistence
 {
     public static class ServiceRegistration
     {
-        public static void AddPersistenceServiceRegistration(this IServiceCollection servColl)
+        public static void AddPersistenceServiceRegistration(this IServiceCollection services, IConfiguration configuration)
         {
-            servColl.AddAutoMapper(typeof(MappingProfiles));
+            var conn = configuration.GetConnectionString("DefaultConnectionString");
 
-            servColl.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ServiceRegistration).Assembly));
+            services.AddAutoMapper(typeof(MappingProfiles));
 
-            servColl.AddDbContext<AppDbContext>(opt =>
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ServiceRegistration).Assembly));
+
+            services.AddDbContext<AppDbContext>(opt =>
             {
-                opt.UseInMemoryDatabase("MemoryDb");
+                opt.UseNpgsql(conn);
                 opt.EnableSensitiveDataLogging();
             });
 
-            servColl.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
-
-
     }
+
 }

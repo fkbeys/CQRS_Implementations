@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.AddEnvironmentConfig(builder.Environment);
 
-builder.Services.AddPersistenceServiceRegistration();
+builder.Services.AddPersistenceServiceRegistration(builder.Configuration);
+
 
 builder.Host.AddLoggingConfig(builder.Configuration);
 

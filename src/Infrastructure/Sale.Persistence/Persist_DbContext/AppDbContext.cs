@@ -9,7 +9,7 @@ namespace Sales.Persistence.Persist_DbContext
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            SeedData();
+           // SeedData();
         }
 
         public DbSet<Product> Products { get; set; }
@@ -17,8 +17,7 @@ namespace Sales.Persistence.Persist_DbContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // Diğer tabloların yapılandırması
+             
         }
 
         public void SeedData()
